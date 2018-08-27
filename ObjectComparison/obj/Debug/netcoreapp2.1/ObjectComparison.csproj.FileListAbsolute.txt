@@ -1,0 +1,11 @@
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\bin\Debug\netcoreapp2.1\ObjectComparison.deps.json
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\bin\Debug\netcoreapp2.1\ObjectComparison.runtimeconfig.json
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\bin\Debug\netcoreapp2.1\ObjectComparison.runtimeconfig.dev.json
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\bin\Debug\netcoreapp2.1\ObjectComparison.dll
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\bin\Debug\netcoreapp2.1\ObjectComparison.pdb
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.csprojAssemblyReference.cache
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.csproj.CoreCompileInputs.cache
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.AssemblyInfoInputs.cache
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.AssemblyInfo.cs
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.dll
+c:\users\msahbi\source\repos\ObjectComparison\ObjectComparison\obj\Debug\netcoreapp2.1\ObjectComparison.pdb
