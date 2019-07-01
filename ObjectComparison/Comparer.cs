@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -119,6 +120,69 @@ namespace ObjectComparison
             return result;
         }
 
+
+
+        ///<summary>
+        /// This function can be used to Compare two objects and check if there are some changes
+        /// It can be used to verify before making an update
+        ///</summary>
+        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
+        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<returns>boolean </returns>
+        public static bool HasChanged(T originalObject, T changedObject)
+        {
+            bool result = false;
+
+            foreach (PropertyInfo property in originalObject.GetType().GetProperties())
+            {
+
+                object originalPropertyValue =
+                    property.GetValue(originalObject, null);
+                object newPropertyValue =
+                    property.GetValue(changedObject, null);
+
+                if (!Equals(originalPropertyValue, newPropertyValue))
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+        ///<summary>
+        /// This function can be used to Compare two objects and check if there are some changes
+        /// It can be used to exclude type date (for example create date)
+        ///</summary>
+        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
+        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<param name="typesToIgnore">it includes the types to be excluded from the comparison</param>
+        ///<returns>boolean </returns>
+        public static bool HasChanged(T originalObject, T changedObject, List<Type> typesToIgnore)
+        {
+            bool result = false;
+
+            foreach (PropertyInfo property in originalObject.GetType().GetProperties())
+            {
+
+                object originalPropertyValue =
+                    property.GetValue(originalObject, null);
+                object newPropertyValue =
+                    property.GetValue(changedObject, null);
+                if (originalPropertyValue != null && typesToIgnore.Contains(originalPropertyValue.GetType()))
+                {
+                    continue;
+                }
+                else if (!Equals(originalPropertyValue, newPropertyValue))
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
+        }
 
     }
 
