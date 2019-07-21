@@ -13,10 +13,10 @@ namespace ObjectComparison
         /// This function can be used to Compare two instances of the same Entity 
         /// This function return an object that can be  stored in the HistoryAudit table
         ///</summary>
-        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
-        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<param name="originalObject">The first object to be used in the comparison</param>
+        ///<param name="changedObject">To be compared with the first param</param>
         ///<returns>ComparisonResult type. </returns>
-        public static ComparisonResult GenerateAuditLogComaprisonObject(T originalObject, T changedObject)
+        public static ComparisonResult GenerateAuditLog(T originalObject, T changedObject)
         {
             ComparisonResult result = new ComparisonResult
             {
@@ -46,8 +46,8 @@ namespace ObjectComparison
         /// This function can be used to Compare two instances of the same Entity 
         /// This function returns an IList that can be displayed in the console line
         ///</summary>
-        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
-        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<param name="originalObject">The first object to be used in the comparison</param>
+        ///<param name="changedObject">To be compared with the first param</param>
         ///<returns>IList type. </returns>
         public static IList GenerateAuditLogMessages(T originalObject, T changedObject)
         {
@@ -77,11 +77,11 @@ namespace ObjectComparison
         /// This function can be used to Compare two instances of the same Entity with the possibility to exclude some propererties 
         /// if the collection param is not empty.
         ///</summary>
-        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
-        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
-        ///<param name="collection">Array of type string, it includes the properties to be excluded from the comparison</param>
+        ///<param name="originalObject">The first object to be used in the comparison</param>
+        ///<param name="changedObject">To be compared with the first param</param>
+        ///<param name="collection">It includes the properties to be excluded from the comparison</param>
         ///<returns>ComparisonResult type. </returns>
-        public static ComparisonResult GenerateAuditLogComaprisonObject(T originalObject, T changedObject, string[] collection = default(string[]))
+        public static ComparisonResult GenerateAuditLog(T originalObject, T changedObject, string[] collection = default(string[]))
         {
             IEnumerable<PropertyInfo> props;
             ComparisonResult result = new ComparisonResult
@@ -126,8 +126,8 @@ namespace ObjectComparison
         /// This function can be used to Compare two objects and check if there are some changes
         /// It can be used to verify before making an update
         ///</summary>
-        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
-        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<param name="originalObject">The first object to be used in the comparison</param>
+        ///<param name="changedObject">To be compared with the first param</param>
         ///<returns>boolean </returns>
         public static bool HasChanged(T originalObject, T changedObject)
         {
@@ -155,8 +155,8 @@ namespace ObjectComparison
         /// This function can be used to Compare two objects and check if there are some changes
         /// It can be used to exclude type date (for example create date)
         ///</summary>
-        ///<param name="originalObject">Instance of the T entity, the first object to be used in the comparison</param>
-        ///<param name="changedObject">Instance of the T entity, to be compared with the first param</param>
+        ///<param name="originalObject">The first object to be used in the comparison</param>
+        ///<param name="changedObject">To be compared with the first param</param>
         ///<param name="typesToIgnore">it includes the types to be excluded from the comparison</param>
         ///<returns>boolean </returns>
         public static bool HasChanged(T originalObject, T changedObject, List<Type> typesToIgnore)

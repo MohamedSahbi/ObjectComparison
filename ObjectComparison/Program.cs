@@ -49,7 +49,7 @@ namespace ObjectComparison
             Console.WriteLine("*  ");
             Console.WriteLine("Object Comparison with ComparisonResult as type");
             Console.WriteLine("  ");
-            var y = Comparer<Person>.GenerateAuditLogComaprisonObject(person, newPerson);
+            var y = Comparer<Person>.GenerateAuditLog(person, newPerson);
             Console.WriteLine("Class name : " +y.ClassName );
             Console.WriteLine( "Changed Properties :" +y.ChangedProperties);
             Console.WriteLine( "Old Value: " + y.OldValue);
@@ -60,7 +60,7 @@ namespace ObjectComparison
 
 
             var collection = new string[]{ "Id"};
-            var z = Comparer<Person>.GenerateAuditLogComaprisonObject(person, newPerson, collection);
+            var z = Comparer<Person>.GenerateAuditLog(person, newPerson, collection);
             Console.WriteLine("*******************  ");
             Console.WriteLine("*******  ");
             Console.WriteLine("*  ");
